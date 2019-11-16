@@ -23,8 +23,13 @@ public class App
 			 else
 			 {
 				 double[] gst=product.calculateGst(price, unit);
+				 if(null==gst)
+					 System.out.println("Negative value not accepted");
+				 else
+				 {
 				 System.out.println("GST aplicable per unit:"+gst[0]);
 				 System.out.println("Final Price:"+gst[1]);
+				 }
 			 }
 			 System.out.print("Enter yes to continue:");
 			 input=sc.next();
